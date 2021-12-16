@@ -5,46 +5,33 @@ function randomNumber (minNum, maxNum) {
 
 }
 
+function isEven (value) {
+    if (value %2 == 0)
+		return true;
+	else
+		return false;
+}
+
+let somma = 0;
+
+let userInput = prompt('Scegli se Pari o Dispari');
+console.log('L\'utente ha scelto:', userInput)
+
+let numInput = parseInt(prompt('Scegli un numero fino a 5'));
+console.log('Il numero dell\'utente è:', numInput)
 
 let pcNum = randomNumber(1,5);
-let pari = false;
-let pariInput;
-let dispariInput;
+console.log('Il numero del pc è', pcNum)
 
-let userInput = parseInt(prompt('Scegli se pari(1) o dispari(2)'));
+somma = pcNum + numInput;
 
-if (userInput === 1) {
+let calc = isEven(somma);
 
-    pariInput = parseInt(prompt('Hai scelto pari, quindi digita un numero pari fino a 5 escluso lo 0'));
-
-    if (pariInput % 2 === 0 && pariInput < 5) {
-
-        pari = true;
-
-    } else {
-
-        console.log('digita un numero pari');
-
-    }
-
-} else if (userInput === 2) {
-
-    dispariInput = parseInt(prompt('Hai scelto dispari, quindi digita un numero dispari fino a 5'));
-
-    if (dispariInput % 2 !== 0 && dispariInput <=5) {
-
-        pari = false;
-
-    } else {
-
-        console.log('digita un numero dispari')
-
-    }
-
-}
-
-if (pari) {
-    console.log(pariInput)
+if (calc) {
+    console.log('Ha vinto il numero PARI');
 } else {
-    console.log(dispariInput)
+    console.log('Ha vinto il numero DISPARI');
 }
+
+
+
